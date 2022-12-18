@@ -1,5 +1,9 @@
 package com.liam.productservice.repositories;
 
-public interface ProductRepository {
+import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
+
+import com.liam.productservice.entities.Product;
+
+public interface ProductRepository extends ReactiveMongoRepository<Product, String> {
 
 }
