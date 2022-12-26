@@ -1,5 +1,7 @@
 package com.liam.productservice.util;
 
+import org.springframework.beans.BeanUtils;
+
 import com.liam.productservice.dtos.ProductDto;
 import com.liam.productservice.entities.Product;
 
@@ -9,8 +11,11 @@ public class EntityDTOUtil {
 		
 		ProductDto dto = new ProductDto();
 		
-		dto.setDescription(product.getDescription());
-		dto.setPrice(product.getPrice());
+//		dto.setDescription(product.getDescription());
+//		dto.setPrice(product.getPrice());
+		
+		// More efficient
+		BeanUtils.copyProperties(product, dto);
 		
 		return dto;
 	}
