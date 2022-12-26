@@ -9,15 +9,26 @@ public class EntityDTOUtil {
 	
 	public static ProductDto toDto(Product product) {
 		
-		ProductDto dto = new ProductDto();
+		ProductDto productDTO = new ProductDto();
 		
 //		dto.setDescription(product.getDescription());
 //		dto.setPrice(product.getPrice());
 		
 		// More efficient
-		BeanUtils.copyProperties(product, dto);
+		BeanUtils.copyProperties(product, productDTO);
 		
-		return dto;
+		return productDTO;
+	}
+	
+	
+public static Product toEntity(ProductDto productDTO) {
+		
+		Product product = new Product();
+		
+		// More efficient
+		BeanUtils.copyProperties(productDTO, product);
+		
+		return product;
 	}
 
 }
