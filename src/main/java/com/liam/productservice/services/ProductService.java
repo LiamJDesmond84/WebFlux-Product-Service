@@ -8,6 +8,7 @@ import com.liam.productservice.repositories.ProductRepository;
 import com.liam.productservice.util.EntityDTOUtil;
 
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 @Service
 public class ProductService {
@@ -19,6 +20,11 @@ public class ProductService {
 		
 		return productRepository.findAll()
 //				.map(x -> EntityDTOUtil.toDto(x));
+				.map(EntityDTOUtil::toDto);
+	}
+	
+	public Mono<ProductDto> getProductById(String id) {
+		return productRepository.findById(id)
 				.map(EntityDTOUtil::toDto);
 	}
 
