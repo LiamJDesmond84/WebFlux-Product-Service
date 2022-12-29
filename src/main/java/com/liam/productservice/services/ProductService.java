@@ -18,7 +18,8 @@ public class ProductService {
 	public Flux<ProductDto> getAllProducts() {
 		
 		return productRepository.findAll()
-				.map(EntityDTOUtil.toDto(return x -> x));
+//				.map(x -> EntityDTOUtil.toDto(x));
+				.map(EntityDTOUtil::toDto);
 	}
 
 }
