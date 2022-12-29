@@ -27,5 +27,13 @@ public class ProductService {
 		return productRepository.findById(id)
 				.map(EntityDTOUtil::toDto);
 	}
+	
+	public Mono<ProductDto> insertNewProduct(Mono<ProductDto> productDto) {
+		 return productDto
+//				 .map(x -> EntityDTOUtil.toEntity(x));
+				 .map(EntityDTOUtil::toEntity)
+				 .flatMap(productRepository::insert)
+				 .map(EntityDTOUtil::toDto);
+	}
 
 }
