@@ -21,7 +21,7 @@ public class EntityDTOUtil {
 	}
 	
 	
-public static Product toEntity(ProductDto productDTO) {
+	public static Product toEntity(ProductDto productDTO) {
 		
 		Product product = new Product();
 		
