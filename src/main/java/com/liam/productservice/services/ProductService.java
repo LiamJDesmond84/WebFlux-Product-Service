@@ -40,7 +40,9 @@ public class ProductService {
 		 return productRepository.findById(id)
 				 .flatmap(p - productDto
 						 .map(EntityDTOUtil::toEntity)
-						 .doOnNext(e -> e.setId(id)));
+						 .doOnNext(e -> e.setId(id)))
+				 .flatmap(productRepository::save))
+				.map(EntityDTOUtil::toDto);
 						 
 						 
 				
