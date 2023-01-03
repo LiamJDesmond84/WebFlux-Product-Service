@@ -45,7 +45,9 @@ public class ProductService {
 				.map(EntityDTOUtil::toDto);
 	}
 	
-	public void deleteProduct(String id) {
+	
+	// - Has to be subscribed, hence Mono<Void>, or else will show errors
+	public Mono<Void> deleteProduct(String id) {
 		return productRepository.deleteById(id);
 	}
 
