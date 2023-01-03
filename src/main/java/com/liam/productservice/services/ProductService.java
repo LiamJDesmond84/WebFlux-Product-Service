@@ -46,7 +46,7 @@ public class ProductService {
 	}
 	
 	
-	// - Has to be subscribed, hence Mono<Void>, or else will show errors
+	// - Has to be subscribed(otherwise the pipeline will not do anything), hence Mono<Void>, or else will show errors
 	public Mono<Void> deleteProduct(String id) {
 		return productRepository.deleteById(id);
 	}
