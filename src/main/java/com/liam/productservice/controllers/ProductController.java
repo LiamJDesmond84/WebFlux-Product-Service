@@ -10,6 +10,7 @@ import com.liam.productservice.dtos.ProductDto;
 import com.liam.productservice.services.ProductService;
 
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 @RestController
 @RequestMapping("product")
@@ -26,4 +27,10 @@ public class ProductController {
 		return productService.getAllProducts();
 	}
 	
+	
+	@GetMapping("id")
+	public Mono<ProductDto> getOneProduct(String id) {
+		
+		return productService.getProductById(id);
+	}
 }
