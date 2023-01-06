@@ -34,6 +34,12 @@ public class ProductController {
 		return productService.getProductById(id);
 	}
 	
+	@GetMapping("id")
+	public Mono<ProductDto> createOneProduct(Mono<ProductDto> productDto) {
+		
+		return productService.insertNewProduct(productDto);
+	}
+	
 	
 	@GetMapping("id")
 	public Mono<ProductDto> updateOneProduct(String id, Mono<ProductDto> productDto) {
