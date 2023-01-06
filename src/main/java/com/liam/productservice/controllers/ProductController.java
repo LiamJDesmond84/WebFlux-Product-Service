@@ -40,4 +40,11 @@ public class ProductController {
 		
 		return productService.updateProduct(id, productDto);
 	}
+	
+	
+	@GetMapping("id")
+	public Mono<Void> deleteOneProduct(String id) {
+		
+		return productService.deleteProduct(id);
+	}
 }
