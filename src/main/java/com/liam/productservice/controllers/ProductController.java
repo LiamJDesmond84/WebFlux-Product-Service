@@ -36,8 +36,8 @@ public class ProductController {
 	
 	
 	@GetMapping("id")
-	public Mono<ProductDto> updateOneProduct(String id) {
+	public Mono<ProductDto> updateOneProduct(String id, Mono<ProductDto> productDto) {
 		
-		return productService.getProductById(id);
+		return productService.updateProduct(id, productDto);
 	}
 }
