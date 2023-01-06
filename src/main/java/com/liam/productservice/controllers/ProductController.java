@@ -35,21 +35,21 @@ public class ProductController {
 	}
 	
 	@GetMapping("id")
-	public Mono<ProductDto> createOneProduct(Mono<ProductDto> productDto) {
+	public Mono<ProductDto> createProduct(Mono<ProductDto> productDto) {
 		
 		return productService.insertNewProduct(productDto);
 	}
 	
 	
 	@GetMapping("id")
-	public Mono<ProductDto> updateOneProduct(String id, Mono<ProductDto> productDto) {
+	public Mono<ProductDto> updateProduct(String id, Mono<ProductDto> productDto) {
 		
 		return productService.updateProduct(id, productDto);
 	}
 	
 	
 	@GetMapping("id")
-	public Mono<Void> deleteOneProduct(String id) {
+	public Mono<Void> deleteProduct(String id) {
 		
 		return productService.deleteProduct(id);
 	}
