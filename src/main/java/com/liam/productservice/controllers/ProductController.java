@@ -1,6 +1,7 @@
 package com.liam.productservice.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -36,21 +37,21 @@ public class ProductController {
 		return productService.getProductById(id);
 	}
 	
-	@PostMapping
+	@PostMapping("newProduct")
 	public Mono<ProductDto> createProduct(Mono<ProductDto> productDto) {
 		
 		return productService.insertNewProduct(productDto);
 	}
 	
 	
-	@PutMapping("{id}")
+	@DeleteMapping("delete/{id}")
 	public Mono<ProductDto> updateProduct(String id, Mono<ProductDto> productDto) {
 		
 		return productService.updateProduct(id, productDto);
 	}
 	
 	
-	@GetMapping("id")
+	@GetMapping("{id}")
 	public Mono<Void> deleteProduct(String id) {
 		
 		return productService.deleteProduct(id);
