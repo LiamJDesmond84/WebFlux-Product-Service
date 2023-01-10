@@ -2,6 +2,7 @@ package com.liam.productservice.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,13 +29,13 @@ public class ProductController {
 	}
 	
 	
-	@GetMapping("id")
+	@GetMapping("{id}")
 	public Mono<ProductDto> getOneProduct(String id) {
 		
 		return productService.getProductById(id);
 	}
 	
-	@GetMapping("id")
+	PostMapping
 	public Mono<ProductDto> createProduct(Mono<ProductDto> productDto) {
 		
 		return productService.insertNewProduct(productDto);
