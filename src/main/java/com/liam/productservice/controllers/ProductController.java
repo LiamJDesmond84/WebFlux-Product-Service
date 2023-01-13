@@ -49,14 +49,14 @@ public class ProductController {
 	}
 	
 	
-	@DeleteMapping("delete/{id}")
-	public Mono<ProductDto> updateProduct(String id, Mono<ProductDto> productDto) {
+	@DeleteMapping("{id}")
+	public Mono<ProductDto> updateProduct(@PathVariable("id") String id, Mono<ProductDto> productDto) {
 		
 		return productService.updateProduct(id, productDto);
 	}
 	
 	
-	@GetMapping("{id}")
+	@GetMapping("delete/{id}")
 	public Mono<Void> deleteProduct(String id) {
 		
 		return productService.deleteProduct(id);
