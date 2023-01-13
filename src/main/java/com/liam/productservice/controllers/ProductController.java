@@ -1,6 +1,7 @@
 package com.liam.productservice.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -34,7 +35,8 @@ public class ProductController {
 	@GetMapping("{id}")
 	public Mono<ProductDto> getOneProduct(String id) {
 		
-		return productService.getProductById(id);
+		return productService.getProductById(id)
+				.map(ResponseEntity::ok);
 	}
 	
 	@PostMapping("newProduct")
