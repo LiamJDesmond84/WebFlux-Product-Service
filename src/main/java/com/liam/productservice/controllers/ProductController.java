@@ -36,7 +36,8 @@ public class ProductController {
 	public Mono<ProductDto> getOneProduct(String id) {
 		
 		return productService.getProductById(id)
-				.map(ResponseEntity::ok);
+				.map(ResponseEntity::ok)
+				.defaultIfEmpty(ResponseEntity.notFound().build());
 	}
 	
 	@PostMapping("newProduct")
