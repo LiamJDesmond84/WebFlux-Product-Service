@@ -50,9 +50,11 @@ public class ProductController {
 	
 	
 	@DeleteMapping("{id}")
-	public Mono<ProductDto> updateProduct(@PathVariable("id") String id, Mono<ProductDto> productDto) {
+	public Mono<ResponseEntity<ProductDto>> updateProduct(@PathVariable("id") String id, @RequestBody Mono<ProductDto> productDto) {
 		
-		return productService.updateProduct(id, productDto);
+		return productService.updateProduct(id, productDto)
+				.map(ResponseEntity::ok)
+				.defaultIfEmpty(ResponseEntity.notFound().build());
 	}
 	
 	
