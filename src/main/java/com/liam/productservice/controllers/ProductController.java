@@ -33,7 +33,7 @@ public class ProductController {
 	
 	
 	@GetMapping("{id}")
-	public Mono<ProductDto> getOneProduct(String id) {
+	public Mono<ResponseEntity<ProductDto>> getOneProduct(String id) {
 		
 		return productService.getProductById(id)
 				.map(ResponseEntity::ok)
