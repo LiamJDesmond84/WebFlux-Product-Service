@@ -58,7 +58,7 @@ public class ProductController {
 	}
 	
 	
-	@GetMapping("delete/{id}")
+	@GetMapping("{id}")
 	public Mono<Void> deleteProduct(String id) {
 		
 		return productService.deleteProduct(id);
