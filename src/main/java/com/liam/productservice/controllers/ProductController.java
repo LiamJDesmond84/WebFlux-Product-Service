@@ -59,7 +59,7 @@ public class ProductController {
 	
 	
 	@DeleteMapping("{id}")
-	public Mono<Void> deleteProduct(String id) {
+	public Mono<Void> deleteProduct(@PathVariable("id") String id) {
 		
 		return productService.deleteProduct(id);
 	}
