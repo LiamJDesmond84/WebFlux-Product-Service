@@ -49,7 +49,7 @@ public class ProductController {
 	}
 	
 	
-	@DeleteMapping("{id}")
+	@PutMapping("{id}")
 	public Mono<ResponseEntity<ProductDto>> updateProduct(@PathVariable("id") String id, @RequestBody Mono<ProductDto> productDto) {
 		
 		return productService.updateProduct(id, productDto)
@@ -58,7 +58,7 @@ public class ProductController {
 	}
 	
 	
-	@GetMapping("{id}")
+	@DeleteMapping("{id}")
 	public Mono<Void> deleteProduct(String id) {
 		
 		return productService.deleteProduct(id);
