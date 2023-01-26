@@ -27,11 +27,15 @@ public class ProductController {
 	private ProductService productService;
 	
 	
+	
+	
 	@GetMapping("all")
 	public Flux<ProductDto> getAllProducts() {
 		
 		return productService.getAllProducts();
 	}
+	
+	
 	
 	
 	@GetMapping("{id}")
@@ -42,11 +46,15 @@ public class ProductController {
 				.defaultIfEmpty(ResponseEntity.notFound().build());
 	}
 	
+	
+	
 	@PostMapping("")
 	public Mono<ProductDto> createProduct(@RequestBody Mono<ProductDto> productDto) {
 		
 		return productService.insertNewProduct(productDto);
 	}
+	
+	
 	
 	
 	@PutMapping("{id}")
@@ -56,6 +64,7 @@ public class ProductController {
 				.map(ResponseEntity::ok)
 				.defaultIfEmpty(ResponseEntity.notFound().build());
 	}
+	
 	
 	
 	@DeleteMapping("{id}")
