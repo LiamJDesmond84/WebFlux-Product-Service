@@ -72,4 +72,15 @@ public class ProductController {
 		
 		return productService.deleteProduct(id);
 	}
+	
+	
+	
+//	@GetMapping("range")
+//	public Mono<Void> findProductByRange(@PathVariable("int") Integer int) {
+//		
+//		
+//		
+//		return productService.deleteProduct(id);
+//	}
+	
 }
