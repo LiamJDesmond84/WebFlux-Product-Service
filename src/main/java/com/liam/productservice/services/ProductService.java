@@ -1,6 +1,7 @@
 package com.liam.productservice.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Range;
 import org.springframework.stereotype.Service;
 
 import com.liam.productservice.dtos.ProductDto;
@@ -49,6 +50,12 @@ public class ProductService {
 	// - Has to be subscribed(otherwise the pipeline will not do anything), hence Mono<Void>, or else will show errors
 	public Mono<Void> deleteProduct(String id) {
 		return productRepository.deleteById(id);
+	}
+	
+	
+	public Mono<ProductDto> findByPriceBetweenoductById(int min, int max) {
+		return productRepository.findByPriceBetweenoductById(Range.closed(min, max))
+				.map(EntityDTOUtil::toDto);
 	}
 
 }

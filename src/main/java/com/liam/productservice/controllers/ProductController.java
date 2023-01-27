@@ -75,12 +75,12 @@ public class ProductController {
 	
 	
 	
-//	@GetMapping("range")
-//	public Mono<Void> findByPriceBetween(@PathVariable("int") Integer int) {
-//		
-//		
-//		
-//		return productService.deleteProduct(id);
-//	}
+	@GetMapping("range")
+	public Mono<Void> findByPriceBetween(@PathVariable("int") Integer int) {
+		
+		
+		
+		return productService.deleteProduct(id);
+	}
 	
 }
