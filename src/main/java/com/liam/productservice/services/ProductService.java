@@ -53,7 +53,7 @@ public class ProductService {
 	}
 	
 	
-	public Flux<ProductDto> findByPriceBetweenoductById(int min, int max) {
+	public Flux<ProductDto> findByPriceBetween(int min, int max) {
 		return productRepository.findByPriceBetween(Range.closed(min, max))
 				.map(EntityDTOUtil::toDto);
 	}
