@@ -76,11 +76,9 @@ public class ProductController {
 	
 	
 	@GetMapping("range")
-	public Mono<Void> findByPriceBetween(@PathVariable("int") Integer int) {
+	public Mono<ProductDto> findByPriceBetween(@PathVariable("min") min, @PathVariable("max") max) {
 		
-		
-		
-		return productService.deleteProduct(id);
+		return productService.findByPriceBetween(min, max);
 	}
 	
 }
