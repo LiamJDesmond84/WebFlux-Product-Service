@@ -76,7 +76,7 @@ public class ProductController {
 	
 	
 //	@GetMapping("range")
-//	public Mono<Void> findProductByRange(@PathVariable("int") Integer int) {
+//	public Mono<Void> findByPriceBetween(@PathVariable("int") Integer int) {
 //		
 //		
 //		
