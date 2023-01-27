@@ -11,8 +11,8 @@ import reactor.core.publisher.Flux;
 @Repository
 public interface ProductRepository extends ReactiveMongoRepository<Product, String> {
 	
-//	Flux<Product> findByPriceBetween(int min, int max);
+//	Flux<Product> findBetweenRange(int min, int max);
 	
-	Flux<Product> findByPriceBetween(Range<Integer> range);
+	Flux<Product> findBetweenRange(Range<Integer> range);
 
 }
