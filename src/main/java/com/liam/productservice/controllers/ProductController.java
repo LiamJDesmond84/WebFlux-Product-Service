@@ -79,6 +79,6 @@ public class ProductController {
 	@GetMapping("range/{min}/{max}")
 	public Flux<ProductDto> findBetweenRange(@PathVariable("min") int min, @PathVariable("max") int max) {
 		
-		return productService.findByPriceBetween(min, max);
+		return productService.findBetweenRange(min, max);
 	}
 }
