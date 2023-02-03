@@ -13,6 +13,6 @@ public interface ProductRepository extends ReactiveMongoRepository<Product, Stri
 	
 //	Flux<Product> findBetweenRange(int min, int max);
 	
-	Flux<Product> findBetweenRange(Range<Integer> range);
+	Flux<Product> findByPriceBetween(Range<Integer> range);
 
 }
