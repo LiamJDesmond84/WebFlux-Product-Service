@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.liam.productservice.dtos.ProductDto;
@@ -78,6 +79,12 @@ public class ProductController {
 
 	@GetMapping("range/{min}/{max}")
 	public Flux<ProductDto> findBetweenRange(@PathVariable("min") int min, @PathVariable("max") int max) {
+		
+		return productService.findBetweenRange(min, max);
+	}
+	
+	@GetMapping("price-range")
+	public Flux<ProductDto> getPriceByRange(@RequestParam("min") int min, @RequestParam("max") int max) {
 		
 		return productService.findBetweenRange(min, max);
 	}
