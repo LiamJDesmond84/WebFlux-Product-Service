@@ -17,6 +17,8 @@ public class ProductService {
 	@Autowired
 	private ProductRepository productRepository;
 	
+	
+	// GET ALL
 	public Flux<ProductDto> getAllProducts() {
 		
 		return productRepository.findAll()
