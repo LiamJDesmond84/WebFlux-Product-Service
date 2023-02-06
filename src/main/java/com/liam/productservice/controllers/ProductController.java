@@ -57,7 +57,7 @@ public class ProductController {
 	
 	
 	
-	//UPDATE
+	// UPDATE
 	@PutMapping("{id}")
 	public Mono<ResponseEntity<ProductDto>> updateProduct(@PathVariable("id") String id, @RequestBody Mono<ProductDto> productDto) {
 		
@@ -67,7 +67,7 @@ public class ProductController {
 	}
 	
 	
-	
+	// DELETE
 	@DeleteMapping("{id}")
 	public Mono<Void> deleteProduct(@PathVariable("id") String id) {
 		
@@ -77,7 +77,7 @@ public class ProductController {
 	
 	
 	
-
+	// SEARCH BY RANGE(path variabes)
 	@GetMapping("range/{min}/{max}")
 	public Flux<ProductDto> findBetweenRange(@PathVariable("min") int min, @PathVariable("max") int max) {
 		
@@ -85,6 +85,7 @@ public class ProductController {
 	}
 	
 	
+	// SEARCH BY RANGE(query parameters)
 	@GetMapping("price-range")
 	public Flux<ProductDto> getPriceByRange(@RequestParam("min") int min, @RequestParam("max") int max) {
 
