@@ -29,7 +29,7 @@ public class ProductController {
 	
 	
 	
-	
+	// GET ALL
 	@GetMapping("all")
 	public Flux<ProductDto> getAllProducts() {
 		
@@ -38,7 +38,7 @@ public class ProductController {
 	
 	
 	
-	
+	// GET ONE
 	@GetMapping("{id}")
 	public Mono<ResponseEntity<ProductDto>> getOneProduct(@PathVariable("id") String id) {
 		
@@ -48,7 +48,7 @@ public class ProductController {
 	}
 	
 	
-	
+	// CREATE
 	@PostMapping("")
 	public Mono<ProductDto> createProduct(@RequestBody Mono<ProductDto> productDto) {
 		
@@ -57,7 +57,7 @@ public class ProductController {
 	
 	
 	
-	
+	//UPDATE
 	@PutMapping("{id}")
 	public Mono<ResponseEntity<ProductDto>> updateProduct(@PathVariable("id") String id, @RequestBody Mono<ProductDto> productDto) {
 		
