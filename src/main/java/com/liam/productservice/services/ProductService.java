@@ -53,6 +53,8 @@ public class ProductService {
 	}
 	
 	
+	
+	// SEARCH BY RANGE (both controller methods)
 	public Flux<ProductDto> findBetweenRange(int min, int max) {
 		return productRepository.findByPriceBetween(Range.closed(min, max))
 				.map(EntityDTOUtil::toDto);
